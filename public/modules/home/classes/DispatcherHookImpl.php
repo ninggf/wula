@@ -3,7 +3,6 @@ namespace home\classes;
 
 use wulaphp\router\hook\IRouterHooks;
 use wulaphp\plugin\Hook;
-use home\CmsURLDispatcher;
 
 class DispatcherHookImpl extends Hook implements IRouterHooks {
 
@@ -13,6 +12,6 @@ class DispatcherHookImpl extends Hook implements IRouterHooks {
      * @see \wulaphp\router\hook\IRouterHooks::register()
      */
     public function register($router) {
-        $router->register ( new CmsURLDispatcher (), 1 );
+        $router->register ( new DemoDispatcher (), 1 );
     }
 }

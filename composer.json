@@ -2,20 +2,19 @@
   "name" : "wulaphp/wulademo",
   "description" : "用于初始化基于wulaphp开发网站的基本目录结构。",
   "require" : {
-    "php" : ">=5.3.9",
+    "php" : ">=5.6.0",
     "ext-json" : "*",
     "ext-pdo" : "*",
     "ext-mbstring" : "*",
     "ext-curl" : "*",
     "ext-SPL" : "*",
-    "wulaphp/wulaphp":"~1.0",
-    "smarty/smarty": "^3.1"
+    "wulaphp/wulaphp":"^1.0"
   },
   "license" : "MIT",
   "keywords" : [ "PHP", "MVC", "RBAC", "ACL", "plugin", "extension" ],
   "time" : "2016-07-21",
   "scripts" : {
-    "post-root-package-install" : [ "php wula.php" ]
+    "post-root-package-install" : [ "php wula.php --init" ]
   },
   "type" : "project",
   "authors" : [ {

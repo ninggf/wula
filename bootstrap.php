@@ -39,6 +39,6 @@ define ( 'DS', DIRECTORY_SEPARATOR );
  */
 define ( 'APPROOT', __DIR__ . DIRECTORY_SEPARATOR );
 // 加载composer的autoload.
-require APPROOT . '../bootstrap.php';
+require APPROOT . 'vendor/wulaphp/wulaphp/bootstrap.php';
 // end of bootstrap.php
 //////////////////////////////////////////////////////////

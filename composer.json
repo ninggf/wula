@@ -1,6 +1,6 @@
 {
-  "name" : "wulaphp/wula",
-  "description" : "基于wulaphp的能用网站目录结构。",
+  "name" : "wulaphp/wulademo",
+  "description" : "用于初始化基于wulaphp开发网站的基本目录结构。",
   "require" : {
     "php" : ">=5.3.9",
     "ext-json" : "*",
@@ -8,23 +8,22 @@
     "ext-mbstring" : "*",
     "ext-curl" : "*",
     "ext-SPL" : "*",
-    "wulaphp/wulaphp":"*"
+    "wulaphp/wulaphp":"~1.0",
+    "smarty/smarty": "^3.1"
   },
   "license" : "MIT",
-  "keywords" : [ "PHP", "MVC", "RBAC", "ACL", "plugin", "extension", "mobileapp", "webapp" ],
-  "extra" : {
-    "branch-alias" : {
-      "dev-master" : "0.1.x-dev"
-    }
-  },
-  "time" : "2016-06-21",
+  "keywords" : [ "PHP", "MVC", "RBAC", "ACL", "plugin", "extension" ],
+  "time" : "2016-07-21",
   "scripts" : {
-    "post-root-package-install" : [ "php wula.cli.php --init" ]
+    "post-root-package-install" : [ "php wula.php" ]
   },
   "type" : "project",
   "authors" : [ {
     "name" : "Leo Ning",
     "email" : "windywany@163.com"
   } ],
+  "config": {
+        "preferred-install": "dist"
+  },
   "homepage" : "http://www.wulaphp.com/"
 }

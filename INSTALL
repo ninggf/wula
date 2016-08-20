@@ -4,10 +4,6 @@
 	1.1 default sites
     DocumentRoot "your_project_public_dir"
 	<Directory "your_web_public_dir">
-		<FilesMatch ".*\.tpl$">
-		    Order allow,deny
-		    Deny from all
-		</FilesMatch>
 		Options FollowSymLinks -Indexes
 		AllowOverride all
 		Order allow,deny
@@ -19,10 +15,6 @@
 	
     <VirtualHost *:80>
 		<Directory "your_project_public_dir">
-			<FilesMatch ".*\.tpl$">
-			    Order allow,deny
-			    Deny from all
-			</FilesMatch>
 			Options FollowSymLinks
 			AllowOverride All
 			Order allow,deny
@@ -46,9 +38,9 @@
         location / {
             index index.php index.html index.htm;
             if (!-f $request_filename){            	
-                #rewrite “^(.*)$” index.php?_url=$1 last;
+                #rewrite “^(.*)$” index.php last;
                 # above for 0.x and below for 1.x
-                rewrite ^(.*)$ index.php?_url=$1 last;
+                rewrite ^(.*)$ index.php last;
             }
         }
         location ~ /(modules)/.+\.tpl$ {

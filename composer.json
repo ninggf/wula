@@ -1,5 +1,5 @@
 {
-  "name" : "wulaphp/wula",
+  "name" : "wula/wula",
   "description" : "用于初始化基于wulaphp开发网站的基本目录结构。",
   "require" : {
     "php" : ">=5.6.0",

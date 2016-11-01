@@ -8,7 +8,7 @@
 	"ext-mbstring": "*",
 	"ext-curl": "*",
 	"ext-SPL": "*",
-	"wula/wulaphp": "^1.0"
+	"wula/wulaphp": "^1.1@beta"
   },
   "license": "MIT",
   "keywords": [
@@ -36,7 +36,7 @@
   ],
   "extra": {
 	"branch-alias": {
-	  "dev-master": "1.0.0-dev"
+	  "dev-master": "1.0-dev"
 	}
   },
   "support": {

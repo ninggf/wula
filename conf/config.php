@@ -2,4 +2,4 @@
 /**
  * 应用配置文件.
  */
-return ['debug' => env('debug', DEBUG_WARN)];
+return ['debug' => env('debug', DEBUG_DEBUG)];

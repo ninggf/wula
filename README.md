@@ -7,6 +7,7 @@ composer create-project -s beta wula/wula
 ### 1.2 下载或clone
 - [从github下载](https://github.com/ninggf/wula/releases)最新版本
 - `git clone https://github.com/ninggf/wula.git`
+
 > 说明:
 > 
 > 下载并解压或clone完成后需要执行 `composer update` 下载相关依赖.
@@ -31,6 +32,7 @@ composer create-project -s beta wula/wula
     # other directives can be here
 </VirtualHost>
 ```
+
 > 注:
 >
 > `your_project_public_dir` 应指是 `wwwroot`的绝对路径.
@@ -39,9 +41,11 @@ composer create-project -s beta wula/wula
 
 #### 2.1.2 apache 独立主机配置
 修改apache的配置文件中的以下内容:
+- 修改DocumentRoot
 ```
 DocumentRoot "your_project_public_dir"
 ```
+- 修改目录配置
 ```
 <Directory "your_web_public_dir">
     Options FollowSymLinks -Indexes
@@ -50,6 +54,7 @@ DocumentRoot "your_project_public_dir"
     Allow from all
 </Directory>
 ```
+
 > 注:
 >
 > `your_project_public_dir` 应指是 `wwwroot`的绝对路径.
@@ -85,6 +90,7 @@ server {
     }
 }
 ```
+
 > 注:
 >
 > `your_project_public_dir` 应指是 `wwwroot`的绝对路径.

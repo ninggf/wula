@@ -11,7 +11,7 @@ trait HomeUrlPrefix {
 	use URLPrefixSupport;
 
 	public static function getURLPrefix() {
-		return ['~', 'backendx'];
+		return ['~', 'backend'];
 	}
 }
 

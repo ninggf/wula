@@ -8,7 +8,7 @@
 	"ext-mbstring": "*",
 	"ext-curl": "*",
 	"ext-SPL": "*",
-	"wula/wulaphp": "dev-master"
+	"wula/wulaphp": "^1.1@beta"
   },
   "license": "MIT",
   "keywords": [
@@ -25,7 +25,6 @@
 	]
   },
   "type": "project",
-  "minimum-stability": "dev",
   "config": {
 	"preferred-install": "dist"
   },
@@ -43,11 +42,5 @@
   "support": {
 	"issues": "https://github.com/ninggf/wula/issues"
   },
-  "homepage": "http://www.wulaphp.com/",
-  "repositories": [
-	{
-	  "type": "git",
-	  "url": "https://github.com/windywany/wulaphp.git"
-	}
-  ]
+  "homepage": "http://www.wulaphp.com/"
 }

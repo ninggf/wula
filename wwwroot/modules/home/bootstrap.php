@@ -35,18 +35,6 @@ class HomeModule extends Module {
 	public static function onRouterRegisterDispatcher($router) {
 		$router->register(new DemoDispatcher());
 	}
-
-	/**
-	 * @param int $value
-	 *
-	 * @filter abc\nihao
-	 * @return int
-	 */
-	public static function filterAbcNihao($value) {
-		$value += 1;
-
-		return $value;
-	}
 }
 
 App::register(new HomeModule());

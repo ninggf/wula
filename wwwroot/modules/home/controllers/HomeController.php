@@ -1,11 +1,11 @@
 <?php
 namespace home\controllers;
 
-use home\classes\AbstractHomeController;
+use wulaphp\mvc\controller\Controller;
 
-class HomeController extends AbstractHomeController {
+class HomeController extends Controller {
 
 	public function index() {
-		return view(['nihao' => 'Hello wula!']);
+		return view(['nihao' => 'Hello wula from home module']);
 	}
 }

@@ -15,9 +15,13 @@ if ($options) {
 	$options = explode(',', $options);
 	$dbops   = [];
 	foreach ($options as $option) {
-		$ops = explode(':', $option);
+		$ops = explode('=', $option);
 		if (count($ops) == 2) {
-			$dbops[ constant($ops[0]) ] = constant($ops[1]);
+			if ($ops[1][0] == 'P') {
+				$dbops[ @constant($ops[0]) ] = @constant($ops[1]);
+			} else {
+				$dbops[ @constant($ops[0]) ] = intval($ops[1]);
+			}
 		}
 	}
 	$config->options($dbops);

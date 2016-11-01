@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /modules
-Disallow: /cron.php
+Disallow: /themes
 Disallow: /index.php

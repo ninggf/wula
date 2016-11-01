@@ -4,8 +4,6 @@
  */
 require __DIR__ . '/../bootstrap.php';
 
-$crontab = new wulaphp\plugin\cron\Crontab ();
-
-$crontab->run ( time () );
+fire('crontab', time());
 
 //that's all.

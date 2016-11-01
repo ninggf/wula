@@ -1,16 +1,7 @@
 # 快速开始
 
-## 1. 安装
-### 1.1 通过comopser安装
+## 1 通过comopser安装
 composer create-project -s beta wula/wula
-
-### 1.2 下载或clone
-- [从github下载](https://github.com/ninggf/wula/releases)最新版本
-- `git clone https://github.com/ninggf/wula.git`
-
-> 说明:
-> 
-> 下载并解压或clone完成后需要执行 `composer update` 下载相关依赖.
 
 ## 2. 配置
 ### 2.1 apache 配置
@@ -103,8 +94,8 @@ server {
 
 ## 安装验证
 
-- 安装完成后通过浏览器访问[http://your_server_name/](http://your_server_name/) 看到以下输出说明安装成功：**Hello wula!!**
-- 安装完成后通过浏览器访问[http://your_server_name/backend/home](http://your_server_name/backend/home)看到以下输出说明安装成功：**Hello wula!!**
+- 安装完成后通过浏览器访问[http://your_server_name/](http://your_server_name/) 看到以下输出说明安装成功：**Hello wula from index page!!**
+- 安装完成后通过浏览器访问[http://your_server_name/home](http://your_server_name/home)看到以下输出说明安装成功：**Hello wula from home module!!**
 
 ### BUG提交与参与
 - 如果任何问题或建议请到[issues](https://github.com/ninggf/wula/issues)提交。

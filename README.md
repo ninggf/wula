@@ -5,7 +5,7 @@
 composer create-project -s beta wula/wula
 
 ### 1.2 下载或clone
-- 从github下载[https://github.com/ninggf/wula/releases]最新版本
+- [从github下载](https://github.com/ninggf/wula/releases)最新版本
 - `git clone https://github.com/ninggf/wula.git`
 > 说明:
 > 
@@ -97,11 +97,11 @@ server {
 
 ## 安装验证
 
-- 安装完成后通过浏览器访问[http://your_server_name/] 看到以下输出说明安装成功：**Hello wula!!**
-- 安装完成后通过浏览器访问[http://your_server_name/backend/home] 看到以下输出说明安装成功：**Hello wula!!**
+- 安装完成后通过浏览器访问[http://your_server_name/](http://your_server_name/) 看到以下输出说明安装成功：**Hello wula!!**
+- 安装完成后通过浏览器访问[http://your_server_name/backend/home](http://your_server_name/backend/home)看到以下输出说明安装成功：**Hello wula!!**
 
 ### BUG提交与参与
-- 如果任何问题或建议请到[https://github.com/ninggf/wula/issues]提交。
+- 如果任何问题或建议请到[issues](https://github.com/ninggf/wula/issues)提交。
 - 如果您对wula感兴趣，欢迎fork并提交您的代码。
 - 您还可以加入我们的QQ群: 371487281。
-- 了解wulaphp请传送至[https://github.com/ninggf/wulaphp].
+- 了解wulaphp请传送至[wulaphp](https://github.com/ninggf/wulaphp).

@@ -1,0 +1,12 @@
+<%if @document.isHome == 'true': %>
+    <div class="title-area title-card" style="background-image: url(/images/blur.jpg)">
+        <div class="in">
+            <div class="headline">
+                <h1>欢迎来到wula@php</h1>
+                <p>一个小巧的PHP开发框架：让开发简单、高效，just be a happy coder!</p>
+                <h5><span>composer create-project -s beta wula/wula</span></h5>
+            </div>
+        </div>
+    </div>
+    <% else: %>
+    <% end %>

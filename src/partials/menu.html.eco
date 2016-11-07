@@ -1,0 +1,26 @@
+<ul>
+    <li id="root-item" class="level-0">
+        <% level1 = @getCollection("html").findAll({level: $in: ['level1']},[{order: 1}]).toJSON() %>
+            <ul class="level-1">
+                <%for l1 in level1: %>
+                    <li class="level-1">
+                        <a href="<%= l1.url %>" class="level-1 <%= 'active' if l1.id is @document.id %>">
+                            <%= l1.doctitle || l1.title %>
+                        </a>
+                        <% level2 = @getCollection("html").findAll({parent: $in: [l1.docid] },[{order: 1}]).toJSON() %>
+                            <% if level2.length: %>
+                                <ul class="level-2">
+                                    <% for l2 in level2:%>
+                                        <li class="level-2">
+                                            <a href="<%= l2.url %>" class="level-2 <%= 'active' if l2.id is @document.id %>">
+                                                <%= l2.doctitle || l2.title %>
+                                            </a>
+                                        </li>
+                                        <% end %>
+                                </ul>
+                                <% end %>
+                    </li>
+                    <% end %>
+            </ul>
+    </li>
+</ul>

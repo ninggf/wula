@@ -10,29 +10,37 @@
     <title>
         <%= @document.title %> - wula@php
     </title>
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.staticfile.org/github-markdown-css/2.4.1/github-markdown.min.css">
     <link rel="stylesheet" href="//cdn.staticfile.org/highlight.js/9.7.0/styles/github.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <script src="//use.fontawesome.com/c38daec7f7.js"></script>
     <script src="/js/jquery.js"></script>
     <script src="//cdn.staticfile.org/highlight.js/9.7.0/highlight.min.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="/js/script.min.js"></script>
 </head>
 
 <body role="flatdoc" class="anima">
     <%- @partial('card') %>
 
         <div class="header">
-            <div class="sidebar-btn"></div>
-            <div class="navbar-btn"></div>
-            <h1><a href="/">wula@php</a></h1>
+            <div class="sidebar-btn">
+                <i class="fa fa-align-justify"></i>
+            </div>
+            <div class="navbar-btn">
+                <i class="fa fa-list-ul"></i>
+            </div>
+            <h1>
+                <a href="/" class="big-title">wula@php</a>
+                <a class="small-title">
+                    <%= @document.doctitle || @document.title %>
+                </a>
+            </h1>
             <div class="left drop-menu">
                 <ul>
                     <li><a href="https://github.com/ninggf/wula">View on GitHub</a></li>
                     <li><a href="https://github.com/ninggf/wula/issues">Issues</a></li>
-                    <li><a href="/get-started.html">立即开始</a></li>
-                    <li><a href="/mvc/">MVC</a></li>
-                    <li><a href="/api/">API文档</a></li>
-                    <li><a href="/hooks/">扩展点</a></li>
+                    <li><a href="https://github.com/ninggf/wula/issues">有话说</a></li>
                 </ul>
             </div>
             <div class="right">
@@ -48,25 +56,34 @@
                     <p style="text-align:center;">wula@php - Just be a happy coder!</p>
                 </div>
                 <div class="menu section" role="flatdoc-menu">
-                    <%- @partial('menu')  %>
+                    <%- @partial('menu') %>
                 </div>
                 <div class="bottom section">
-                    <iframe src="http://ghbtns.com/github-btn.html?user=ninggf&amp;repo=wula&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="20"></iframe>
-                    <br>
-                    <a href="https://github.com/ninggf/wula">View on GitHub</a><br>
+                    <p style="text-align:center">
+                        <img src="/images/qrcode.png" alt="" width="200" />
+                    </p>
+                    <p style="text-align:center">
+                        <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=9be37f660c70dd33c22f6055cd113215a52e9cab29d46b5c02fe2f68c67a0f17">扫描加QQ群</a>
+                    </p>
                 </div>
             </div>
 
             <div class="menubar menubar-right">
                 <div class="section" style="padding:30px 10px">
-                    &nbsp;
+                    <p style="text-align:center;">
+                        <a target="_blank" href="<%= @site.doc_git+@document.relativePath %>">编辑此文档 <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></p>
                 </div>
                 <div class="menu section" id="toc" role="flatdoc-menu"></div>
             </div>
             <div class="content markdown-body" id="docbody">
                 <%- @content %>
             </div>
+            <div class="pn">
+                <a id="pre-page" class=""> <i class="fa"></i> </a>
+                <a id="nex-page" class=""> <i class="fa"></i> </a>
+            </div>
         </div>
+
 </body>
 
 </html>

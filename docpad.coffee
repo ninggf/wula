@@ -9,6 +9,7 @@ docpadConfig = {
 	templateData:
 		site:
 			branch: 'master'
+			doc_git: 'https://github.com/ninggf/wula/blob/doc/src/render/',
 			version: '1.0.0-beta'
 
 		qqgroups: [

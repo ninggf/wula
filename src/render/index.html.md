@@ -97,10 +97,10 @@ wula
 
 # 配置 
 
-通过composer安装完成之后，就可以配置apache或nginx来运行了。**以下配置不分操作系统**。
+通过composer安装完成之后，就可以配置apache或nginx来运行wula了。**以下配置不分操作系统**。
 
 ## apache 配置
-- `apache` 需要开启重写功能支持
+- `apache` 需要重写功能支持
 - 请检查`wwwroot`目录中的`.htaccess`文件，此文件必须存在.
 
 ### apache 虚拟主机配置

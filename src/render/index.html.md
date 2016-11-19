@@ -27,7 +27,7 @@ order: 0
 >
 > 心急的话，你也可以[立即开始](/get-started.html)。
 
-# 安装wula
+# 安装
 目前推荐通过composer进行安装(wula正处于开发阶段，所以添加`-s beta`):
 
 `composer create-project -s beta wula/wula`
@@ -43,7 +43,7 @@ order: 0
 > [点我下载最新版Composer](https://getcomposer.org/download/)。
 
 
-## wula目录结构
+## 目录结构
 
 **wula**(`wula@php`)是[wulaphp]框架的炮架子，它为[wulaphp]框架提供`web`应用开发的基础目录结构:
 

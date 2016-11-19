@@ -1,7 +1,8 @@
 ---
-title: '立即开始'
+title: '立即开始使用wulaphp'
 layout: 'default'
 
+doctitle: '立即开始'
 level: 'level1'
 docid: 'start'
 order: 1
@@ -15,6 +16,7 @@ order: 1
 > 多说一句哈
 >
 > 使用[PhpStorm](https://www.jetbrains.com/phpstorm/)开发真的很不懒呢。
+> 你可以[下载本示例模块](/hello.zip).
 
 # 新建目录 - hello
 

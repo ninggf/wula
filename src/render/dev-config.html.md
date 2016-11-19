@@ -10,7 +10,12 @@ docid: 'ide'
 
 # Windows
 
-# Mac
+推荐使用最新版[phpstudy](http://www.phpstudy.net/a.php/211.html)集成环境.
+
+# MacOS
+
+推荐使用homebrew安装。
+
 
 # Linux
 

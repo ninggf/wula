@@ -15,6 +15,18 @@
                                             <a href="<%= l2.url %>" class="level-2 <%= 'active' if l2.id is @document.id %>">
                                                 <%= l2.doctitle || l2.title %>
                                             </a>
+                                            <% level3 = @getCollection("html").findAll({parent: $in: [l2.docid] },[{order: 1}]).toJSON() %>
+                                                <% if level3.length: %>
+                                                    <ul class="level-3">
+                                                        <% for l3 in level3:%>
+                                                            <li class="level-3">
+                                                                <a href="<%= l3.url %>" class="level-3 <%= 'active' if l3.id is @document.id %>">
+                                                                    <%= l3.doctitle || l3.title %>
+                                                                </a>
+                                                            </li>
+                                                            <% end %>
+                                                    </ul>
+                                                    <% end %>
                                         </li>
                                         <% end %>
                                 </ul>

@@ -1,6 +1,6 @@
 ---
 title: '一个小巧的PHP开发框架'
-doctitle: '首页'
+doctitle: '安装'
 layout: 'default'
 
 isHome: 'true'
@@ -21,9 +21,11 @@ order: 0
     - redis（可选，需要基于Redis缓存时安装） 
 2. WEB服务器: apache或者nginx。
     - **它们俩都需要支持重写功能**
-3. MySQL: 版本5.6以上 (如果需要请安装).
+3. MySQL: 版本5.5以上 (如果需要请安装).
 
-> 如果你还没准备好开发环境，请移步到[开发环境配置](/dev-config.html)。
+> 如果你还没准备好开发环境，请传送到[开发环境配置](/dev-config.html)。
+>
+> 心急的话，你也可以[立即开始](/get-started.html)。
 
 # 安装wula
 目前推荐通过composer进行安装(wula正处于开发阶段，所以添加`-s beta`):
@@ -34,7 +36,7 @@ order: 0
 
 > 友情提示:
 >
-> 如果你不了解composer,请移步[Composer](https://getcomposer.org/)或
+> 如果你不了解composer,请传送到[Composer](https://getcomposer.org/)或
 > [Google](https://www.google.com/#q=composer)或
 > [度娘](https://www.baidu.com/s?wd=composer)。
 >
@@ -92,7 +94,8 @@ wula
 > 1. 下文中的`your_project_public_dir`应为`wwwroot`目录的绝对路径.
 > 2. 当`your_project_public_dir`目录是`wwwroot`的上级目录时，要将`WWWROOT_DIR`常量定义为`/wwwroot/`
 > 3. `wwwroot`目录名可以自定义.
-> 4. 以上所有常量的自定义都要放在`bootstrap.php`文件中.
+> 4. 可直接访问资源（图片，CSS，JS等）都应该放在此目录下.
+> 5. 以上所有可自定义常量的都放在`bootstrap.php`文件中，可根据具体情况做出适当修改.
 
 
 # 配置 

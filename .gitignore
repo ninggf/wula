@@ -1,3 +1,4 @@
 node_modules
 outs
 .DS_Store
+.vscode

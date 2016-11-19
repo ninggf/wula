@@ -78,10 +78,6 @@
             <div class="content markdown-body" id="docbody">
                 <%- @content %>
             </div>
-            <div class="pn">
-                <a id="pre-page" class=""> <i class="fa"></i> </a>
-                <a id="nex-page" class=""> <i class="fa"></i> </a>
-            </div>
         </div>
 
 </body>

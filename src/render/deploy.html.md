@@ -3,8 +3,8 @@ title: '部署你的wula@php应用'
 layout: 'default'
 
 doctitle: '部署'
-level: 'level2'
-parent: 'start'
+level: 'level3'
+parent: 'startx'
 order: 2
 ---
 

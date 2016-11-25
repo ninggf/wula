@@ -47,6 +47,11 @@ $options = env('db.options', '');
 
 > 以上配置你可以选择使用一个 不过我们推荐第一种，第二种线上环境我们可以使用
 
+## 数据库操作方式
+
+wulaphp操作数据库的CURD操作有三种写法,实例化`Table`类，`SimpleTable`,`App::table`.
+其实`SimpleTable`和`App::table`最后都是继承`Table`；
+
 ## 数据库操作
 
 ### 插入操作
@@ -73,7 +78,7 @@ $data['param1'] = 'test';
 $data['param2'] = 'test';
 $data['param3'] = 'test';
 $res = $test->insert($data);
-echo $res;
+//return bool(true)
 
 ```
 
@@ -85,7 +90,7 @@ $data['param1'] = 'test';
 $data['param2'] = 'test';
 $data['param3'] = 'test';
 $res = $test->insert($data);
-echo $res;	
+//return bool(true)	
 ```
 
 我们还支持App::table，使用方法如下：
@@ -96,7 +101,7 @@ $data['param1'] = 'test';
 $data['param2'] = 'test';
 $data['param3'] = 'test';
 $res = $test->insert($data);
-echo $res;
+//return bool(true)
 ```    		
 		
 ### 批量插入操作
@@ -112,7 +117,7 @@ $datas[1]['param2'] = 'test';
 $datas[2]['param1'] = 'test';
 $datas[2]['param2'] = 'test';
 $res = $test->inserts($datas);
-var_dump($res);
+//return array;这里将返回多个插入的主键id
 
  ```
 
@@ -124,7 +129,7 @@ $test = new TestTable(); //实例化model方法
 //$test = new SimpleTable('test');//加载SimpleTable类写法
 //$test = App::table('test');  //加载App类写法
 $res = $test->get(['id'=>1]);
-var_dump($res);
+//return array;
 ```
 
 ### 查询所有
@@ -133,7 +138,7 @@ $test = new TestTable(); //实例化model方法
 //$test = new SimpleTable('test');//加载SimpleTable类写法
 //$test = App::table('test');  //加载App类写法
 $res = $test->select('*')->toArray();//当然你也可以选择字段
-var_dump($res);
+//return array;
 
 ```
 
@@ -145,7 +150,8 @@ $test = new TestTable(); //实例化model方法
 $data['param1'] = 'test';
 $data['param2'] = 'test';
 $data['param3'] = 'test';
-$res = $test->update($data ,$where);		
+$res = $test->update($data ,$where);
+//return bool(true)		
 ```
 ##  删除操作
 ```php
@@ -153,6 +159,7 @@ $test = new TestTable(); //实例化model方法
 //$test = new SimpleTable('test');//加载SimpleTable类写法
 //$test = App::table('test');  //加载App类写法
 $res = $test->delete($where); //$res = $test->delete(['id'=>1]);
+//return bool(true)
 ```
 
 **最后各位看官老爷觉得原生sql语句比较顺手，我们wulaphp也是支持的！请使用`$db = App::db(); $db->query();`给各位一个例子：**
@@ -160,5 +167,5 @@ $res = $test->delete($where); //$res = $test->delete(['id'=>1]);
 ```php
 $db = App::db();
 $res  = $db->query('select * from test where id = %d ', 1);
-var_dump($res);
+//return array
 ```

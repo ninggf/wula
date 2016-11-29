@@ -31,7 +31,7 @@ docpadConfig = {
 	events:
 		extendCollections: (opts) ->
 			@docpad.getCollection('documents').on('add', (document) ->
-				if document.toJSON().outExtension is 'svg'
+				if document.toJSON().outExtension is 'svgx'
 					document.setMetaDefaults(standalone:true))   
 			@docpad.getCollection('files').on('add', (document) ->
 				document.setMetaDefaults(standalone:true))    

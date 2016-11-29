@@ -1,7 +1,9 @@
-@startuml
 
+
+
+@startuml
 title
-示例数据库E-R图
+示例数据库E-R图xeee
 end title
 
 package doc <<Database>> {

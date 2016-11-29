@@ -10,47 +10,37 @@ order: 10
 
 # 数据库访问
 
-## 数据库配置 
+在开始之前，请参照[数据库配置](/config.html#h-10),配置好你的数据库链接使wulaphp可以连接上你的数据库。
 
-### 通过.env文件配置 
 
-```ini 
-//这里是数据库配置
-[db]
-;db.driver = MySQL
-;db.host = localhost
-;db.port = 3306
-;db.name = test
-;db.charset = UTF8MB4
-;db.user = leo
-;db.password = 888888
-;db.options =
-```
+## 数据库访问方式
 
-### 通过dbconf.php文件配置
+wulaphp操作数据库的CURD操作有三种写法,
 
-```php
-<?php
-/**
- * 数据库配置。
- */
-$config = new \wulaphp\conf\DatabaseConfiguration('default');
-$config->driver(env('db.driver', 'MySQL'));
-$config->host(env('db.host', 'localhost'));
-$config->port(env('db.port', '3306'));
-$config->dbname(env('db.name', 'test'));
-$config->encoding(env('db.charset', 'UTF8MB4'));
-$config->user(env('db.user', 'root'));
-$config->password(env('db.password', 'root'));
-$options = env('db.options', '');
-```
+1. 继承`Table`类或`View`类，将业务逻辑封装在此类中进行，**推荐**。
+    ```php
+		class UserTable extends Table {
+			public function add($user){
+				// TODO: 你的业务逻辑
+			}
+		}
 
-> 以上配置你可以选择使用一个 不过我们推荐第一种，第二种线上环境我们可以使用
-
-## 数据库操作方式
-
-wulaphp操作数据库的CURD操作有三种写法,实例化`Table`类，`SimpleTable`,`App::table`.
-其实`SimpleTable`和`App::table`最后都是继承`Table`；
+		$userTable = new UserTable();
+		$userTable->add(['username'=>'adfasdf']);
+	```
+2. 直接创建`SimpleTable`的实例进行简单数据库操作或使用`App::table()`方法获取`SimpleTable`实例，此方法是创建`SimpleTable`实例的快捷方式。
+    ```php 
+		$userTable = new SimpleTable('user');
+	```
+	```php 
+		$userTable = App::table('user');
+	```
+3. 通过`App::db()`获取数据库连接进行直接操作.
+	```php 
+		$db = App::db();
+		$user = $db->select('*')->from('user')->where(['name LIKE'=>'%leo%'])->get();
+		$data = $db->query('select * from user where id = %d ', 1);
+	```
 
 ## 数据库操作
 

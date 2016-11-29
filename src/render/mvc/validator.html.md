@@ -4,7 +4,7 @@ layout: 'default'
 
 level: 'level3'
 parent: 'db'
-order: 2
+order: 1000
 ---
 
 # 数据校验

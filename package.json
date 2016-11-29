@@ -6,11 +6,9 @@
         "docpad": "~6.79.0",
         "docpad-plugin-eco": "~2.1.0",
         "docpad-plugin-ghpages": "~2.4.4",
-        "docpad-plugin-lunr": "~2.0.9",
         "docpad-plugin-marked": "~2.3.0",
         "docpad-plugin-partials": "~2.9.2",
-        "docpad-plugin-raw": "~2.4.1",
-        "docpad-plugin-react": "~2.0.3"
+        "docpad-plugin-raw": "~2.4.1"
     },
     "main": "node_modules/.bin/docpad-server",
     "scripts": {

@@ -511,7 +511,7 @@ a.big.button:hover:visited {
 .menu a.level-1 {
     font-family: montserrat, sans-serif;
     text-transform: uppercase;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
 }
 
@@ -526,6 +526,7 @@ a.big.button:hover:visited {
 
 .menu a.level-2 {
     font-weight: normal;
+    font-size: 1.3rem;
 }
 
 .menu a.level-3 {

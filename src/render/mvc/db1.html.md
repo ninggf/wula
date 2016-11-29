@@ -5,7 +5,7 @@ layout: 'default'
 doctitle: '高级查询'
 level: 'level3'
 parent: 'db'
-order: 1
+order: 100
 author: 'wangwei'
 ---
 

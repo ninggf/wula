@@ -1,0 +1,91 @@
+@startuml
+title
+示例数据库E-R图
+end title
+
+package doc <<Database>> {
+class teacher {
+    +int id
+    +string name
+    +string gender
+}
+class student {
+    +int id
+    +string name
+    +int age
+    +bool gender
+    +int height
+    +int weight
+}
+
+class classroom {
+    +int id
+    +string name
+    +int master
+}
+
+class course {
+    +int id
+    +string name
+    +int teacher
+}
+
+class grade {
+    +int student_id
+    +int course_id
+    +int grade
+}
+
+classroom "1" *-- "m" student : 拥有
+classroom "1" -* "1" teacher
+teacher "1" *-- "m" course
+student "0..*" - "1..*" course
+(student,course) ..  grade
+
+note left of student
+学生表
+----
+id - 学生编号
+name - 学生姓名
+age - 年龄
+gender - 学生性别
+height - 身高
+weight - 体重
+end note
+
+note right of course
+课程表
+----
+id - 课程编号
+name - 课程名称
+teacher - 授课老师
+end note
+
+note left of classroom
+班级表
+----
+id - 主键
+name - 班级名称
+master - 班主任
+end note
+
+note left of grade
+分数表 
+----
+student_id - 学生编号
+course_id - 课程编号
+grade - 分数
+end note
+
+note right of teacher
+教师表
+----
+id - 教师编号 
+name - 教师姓名
+gender - 教师性别
+end note
+}
+
+caption 图-1
+
+@enduml

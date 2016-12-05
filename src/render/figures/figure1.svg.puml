@@ -3,10 +3,10 @@
 
 @startuml
 title
-示例数据库E-R图xeee
+示例数据库E-R图
 end title
 
-package doc <<Database>> {
+package database <<Database>> {
 
 class teacher {
     +int id

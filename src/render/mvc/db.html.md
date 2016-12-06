@@ -28,10 +28,7 @@ wulaphp操作数据库的CURD操作有三种写法,
 		$userTable = new UserTable();
 		$userTable->add(['username'=>'adfasdf']);
 	```
-2. 直接创建`SimpleTable`的实例进行简单数据库操作或使用`App::table()`方法获取`SimpleTable`实例，此方法是创建`SimpleTable`实例的快捷方式。
-    ```php 
-		$userTable = new SimpleTable('user');
-	```
+2. 使用`App::table()`方法获取`SimpleTable`实例，此方法是继承`SimpleTable`实例的快捷方式,具体可以查看`SimpleTable`类。
 	```php 
 		$userTable = App::table('user');
 	```

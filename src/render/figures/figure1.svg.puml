@@ -1,6 +1,3 @@
-
-
-
 @startuml
 title
 示例数据库E-R图
@@ -48,10 +45,10 @@ student "0..*" - "1..*" course
 
 note left of student
 学生表
-----
+--
 id - 学生编号
-name - 学生姓名
-age - 年龄
+name - 学生姓
+age -  年龄
 gender - 学生性别
 height - 身高
 weight - 体重
@@ -59,7 +56,7 @@ end note
 
 note right of course
 课程表
-----
+--
 id - 课程编号
 name - 课程名称
 teacher - 授课老师
@@ -67,7 +64,7 @@ end note
 
 note left of classroom
 班级表
-----
+--
 id - 主键
 name - 班级名称
 master - 班主任
@@ -75,7 +72,7 @@ end note
 
 note left of grade
 分数表 
-----
+--
 student_id - 学生编号
 course_id - 课程编号
 grade - 分数
@@ -83,7 +80,7 @@ end note
 
 note right of teacher
 教师表
-----
+--
 id - 教师编号 
 name - 教师姓名
 gender - 教师性别

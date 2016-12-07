@@ -107,11 +107,11 @@ UPDATE student SET name='newName' WHERE cid=1
 `delete`操作实例：
 ```php
 $student = new StudentTable();
-$student->update(['name'=>'newName'],1);
+$student->delete(1);
 ```
 对应sql为：
 ```sql
-DELETE FROM student  WHERE cid=1
+DELETE FROM student WHERE cid=1
 ```
 
 ## 继承`Table`与`View`的区别

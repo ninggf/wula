@@ -45,6 +45,74 @@ class StudentTable extends Table {
 $student = new StudentTable();
 $stu_info = $student->select('*')->toArray();
 ```
+### 重定义模型对应表名
+
+当我们创建一个`StudentTable`的时候它对应的表名为`student`，而你却不想用这个表名，没关系，`wula`支持你
+重定义模型表名，只需要改变下`table`就可以了。例：
+
+```php
+<?php
+namespace home\models;
+use wulaphp\db\Table;
+
+class StudentTable extends Table  {
+     public  $table = 'NewTableName';
+
+	 public function test(){
+        //do something;
+	 }
+}
+```
+这样`StudentTable`现在对应的表名就变成`NewTableName`
+
+
+### 修改默认主键
+
+当我们实例化一个`StudentTable`的时候默认的主键为`id`,而`student`这张表的主键是`sid`。
+我们使用`get` `update` `delete`操作的时候会错误！这种情况我们只需要修改下默认主键就可以了，例：
+
+```php
+<?php
+namespace home\models;
+use wulaphp\db\Table;
+
+class StudentTable extends Table  {
+     protected $primaryKeys = ['cid'];
+
+	 public function test(){
+        //do something;
+	 }
+}
+```
+`get`操作实例：
+```php
+$student = new StudentTable();
+$student->get(1);
+```
+对应sql为：
+```sql
+SELECT * FROM student AS Student WHERE cid=1
+```
+
+`update`操作实例：
+```php
+$student = new StudentTable();
+$student->update(['name'=>'newName'],1);
+```
+对应sql为：
+```sql
+UPDATE student SET name='newName' WHERE cid=1
+```
+
+`delete`操作实例：
+```php
+$student = new StudentTable();
+$student->update(['name'=>'newName'],1);
+```
+对应sql为：
+```sql
+DELETE FROM student  WHERE cid=1
+```
 
 ## 继承`Table`与`View`的区别
 

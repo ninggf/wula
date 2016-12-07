@@ -75,12 +75,7 @@ $stu_info = $student->select('*')->toArray();
 ```
 
 
-当然如果你觉得实例化model比较麻烦你可以直接使用 SimpleTable类 具体使用方法如下：
- 
- ```php
-$student = new SimpleTable('student');
-$stu_info = $student->select('*')->toArray();	
-```
+
 
 我们还支持App::table，使用方法如下：
 

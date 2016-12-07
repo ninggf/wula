@@ -51,7 +51,7 @@ wula
 ## 1 安装
 目前推荐的安装方式composer:
 
-`composer create-project -s beta wula/wula`
+`composer create-project wula/wula`
 
 ## 2. 配置 
 推荐使用`nginx`的配置.

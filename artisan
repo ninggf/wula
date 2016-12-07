@@ -1,5 +1,10 @@
 #!/usr/bin/env php
 <?php
+if (!is_file('vendor/autoload.php')) {
+	echo "\033[0;31mERROR:\033[0m\n\tPlease run \033[1;37m\033[41mcomposer install\033[0m first!\n";
+	exit(1);
+}
+
 include __DIR__ . '/bootstrap.php';
 @ob_end_clean();
 // comand list

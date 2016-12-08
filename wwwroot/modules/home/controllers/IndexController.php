@@ -5,7 +5,7 @@ use wulaphp\io\Response;
 use wulaphp\mvc\controller\Controller;
 use wulaphp\router\Router;
 
-class HomeController extends Controller {
+class IndexController extends Controller {
 	public function beforeRun($action, $refMethod) {
 		parent::beforeRun($action, $refMethod);
 		if (!Router::is('index.html')) {

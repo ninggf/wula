@@ -4,6 +4,8 @@ define('APPID', 'app1');
 //////////////////////////////////////////////////////////////////////////////
 /* 如果你的应用不是运行在网站的根目录,请取消下一行注释并修改其值,必须以/开始,以/结束。*/
 // define('WWWROOT_DIR', '/');
+/* 如果你的网站对外目录不是wwwroot,请取消下一行注释并修改其值。*/
+// define('PUBLIC_DIR', 'wwwroot');
 /* 如果你想改modules目录名，请取消下一行注释并修改其值. */
 // define ('MODULE_DIR', 'modules' );
 /* 如果你想改themes目录名，请取消下一行注释并修改其值. */
@@ -28,8 +30,9 @@ define('APPID', 'app1');
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!以下内容不可修改!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // //////////////////////////////////////////////////////////////////////////////
 define('APPROOT', __DIR__ . DIRECTORY_SEPARATOR);
+defined('PUBLIC_DIR') or define('PUBLIC_DIR', 'wwwroot');
 if (!defined('WWWROOT')) {
-	define('WWWROOT', APPROOT . 'wwwroot' . DIRECTORY_SEPARATOR);
+	define('WWWROOT', APPROOT . PUBLIC_DIR . DIRECTORY_SEPARATOR);
 }
 // 加载composer的autoload.
 require APPROOT . 'vendor/autoload.php';

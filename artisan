@@ -11,6 +11,7 @@ include __DIR__ . '/bootstrap.php';
 $commands                  = apply_filter('artisan\getCommands', []);
 $commands['init']          = new \wulaphp\command\InitCommand();
 $commands['create-module'] = new \wulaphp\command\CreateModuleCommand();
+$commands['create-ext']    = new \wulaphp\command\CreateExtensionCommand();
 $commands['create-table']  = new \wulaphp\command\CreateTableCommand();
 $commands['help']          = new \wulaphp\artisan\ArtisanHelpCommand();
 

@@ -46,7 +46,7 @@ wulaphp操作数据库的CURD操作有三种写法,
 
 ![E-R](/figures/figure1.svg)
 
-> 以以上E-R建立表结构
+>  你可以[下载本示例SQL](/wula_test.sql).
 
 
 ### 简单查询操作

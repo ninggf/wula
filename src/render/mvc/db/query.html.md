@@ -222,6 +222,22 @@ $res = $student->select('id,name,gender')->where($where)->toArray();
 SELECT id,name,gender FROM student AS Student WHERE age=5 OR age=10; 
 ```
 
+```php
+$student = new StudentTable();
+$con['name'] = 'wula';
+$con['age'] = 10;
+$con['||name'] = 'jack';
+$con['age '] = '5';
+$res = $student->select('id,name,gender')->where($con)->toArray();
+
+```
+
+对应SQL：
+
+```sql
+SELECT id,name,gender FROM student AS Student WHERE name=`wula` AND age=10 OR name=`jack` AND age=5; 
+```
+
 
 ### MATCH
 

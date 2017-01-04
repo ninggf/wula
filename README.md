@@ -36,7 +36,7 @@ wula
 |--.env.example # 环境配置示例文件
 |--bootstrap.php # wulaphp引导文件
 |--composer.json # composer配置文件
-|--wula.php # wula炮架安装脚本
+|--artisan # wula命令行工具
 </pre>
 
 

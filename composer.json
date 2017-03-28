@@ -10,7 +10,7 @@
 	"ext-curl": "*",
 	"ext-SPL": "*",
 	"ext-mysqlnd": "*",
-	"wula/wulaphp": "*"
+	"wula/wulaphp": "^1.2"
   },
   "require-dev": {
 	"psr/log": "^1.0",
@@ -18,7 +18,9 @@
   },
   "license": "MIT",
   "keywords": [
-	"MVC","ORM","WEB"
+	"MVC",
+	"ORM",
+	"WEB"
   ],
   "time": "2016-12-07",
   "scripts": {
@@ -47,12 +49,5 @@
   "support": {
 	"issues": "https://github.com/ninggf/wula/issues"
   },
-  "homepage": "http://www.wulaphp.com/",
-  "minimum-stability": "dev",
-  "repositories": [
-	{
-	  "type": "git",
-	  "url": "https://github.com/ninggf/wulaphp.git"
-	}
-  ]
+  "homepage": "http://www.wulaphp.com/"
 }

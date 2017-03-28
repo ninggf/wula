@@ -5,7 +5,6 @@ wula
 wula
 |--conf # 配置目录，可通过CONF_DIR常量自定义
    |--cache_config.php # 缓存配置文件
-   |--cluster_config.php # 分布式部署配置文件
    |--config.php # 应用配置文件，可通过.env(将.env.example复制到.env)文件进行配置
    |--dbconfig.php # 数据库配置文件，可通过.env文件中的db段进行配置
 |--crontab # 定时任务运行目录，可随意命名，如果不需要定时任务可删除

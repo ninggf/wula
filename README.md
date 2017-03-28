@@ -21,9 +21,10 @@ wula
       |--home # home模块
          |--classes # 模块类目录，此目录中的类文件可以按需自动加载(autoload) 
          |--controllers # 模块控制器目录
-            |--HomeController.php # 默认控制器，首页请求由此控制器处理
+            |--IndexController.php # 默认控制器，首页请求由此控制器处理
          |--views # 视图目录
-            |--index.tpl # 基于Smarty的视图模板文件
+            |--index # 对应Controller的视频目录
+              |--index.tpl # 基于Smarty的视图模板文件，对应Controller中的Action.
          |--bootstrap.php # 模块引导文件
       | -- ... # 其它模块
    |--themes # 网站前台主题目录,可通过THEME_DIR常量自定义

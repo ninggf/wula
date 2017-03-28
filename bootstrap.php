@@ -1,11 +1,12 @@
 <?php
-/* 请修改此值 */
-define('APPID', 'app1');
-//////////////////////////////////////////////////////////////////////////////
 /* 如果你的应用不是运行在网站的根目录,请取消下一行注释并修改其值,必须以/开始,以/结束。*/
 // define('WWWROOT_DIR', '/');
 /* 如果你的网站对外目录不是wwwroot,请取消下一行注释并修改其值。*/
 // define('PUBLIC_DIR', 'wwwroot');
+/* 如果你想改变assets目录名，请联消下一行注释并修改其值 */
+// define('ASSETS_DIR', 'assets');
+/* 如果你想改变vendor目录名，请联消下一行注释并修改其值 */
+// define('VENDOR_DIR', 'vendor');
 /* 如果你想改modules目录名，请取消下一行注释并修改其值. */
 // define ('MODULE_DIR', 'modules' );
 /* 如果你想改themes目录名，请取消下一行注释并修改其值. */
@@ -18,14 +19,13 @@ define('APPID', 'app1');
 // define ('LIBS_DIR', 'includes' );
 /* 重新定义运行时内存限制 */
 // define ('RUNTIME_MEMORY_LIMIT', '128M' );
-/* 如果你要重新定义模块加载器,请 */
-// define('MODULE_LOADER_CLASS','wulaphp\app\ModuleLoader');
 /* 如果你要重新定义扩展加载器,请修改 */
 // define('EXTENSION_LOADER_CLASS', 'wulaphp\app\ExtensionLoader');
 /* 如果你要重新定义配置加载器,请修改 */
-// define('CONFIG_LOADER_CLASS','wulaphp\conf\ConfigurationLoader ');
+// define('CONFIG_LOADER_CLASS', 'wulaphp\conf\ConfigurationLoader');
+/* 如果你要重新定义模块加载器,请 */
+// define('MODULE_LOADER_CLASS', 'wulaphp\app\ModuleLoader');
 // 以上配置选择性修改
-// //////////////////////////////////////////////////////////////////////////////
 // //////////////////////////////////////////////////////////////////////////////
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!以下内容不可修改!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // //////////////////////////////////////////////////////////////////////////////
@@ -34,7 +34,7 @@ defined('PUBLIC_DIR') or define('PUBLIC_DIR', 'wwwroot');
 if (!defined('WWWROOT')) {
 	define('WWWROOT', APPROOT . PUBLIC_DIR . DIRECTORY_SEPARATOR);
 }
+defined('VENDOR_DIR') or define('VENDOR_DIR', 'vendor');
 // 加载composer的autoload.
-require APPROOT . 'vendor/autoload.php';
+require APPROOT . VENDOR_DIR . DIRECTORY_SEPARATOR . 'autoload.php';
 // end of bootstrap.php
-//////////////////////////////////////////////////////////

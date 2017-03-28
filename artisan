@@ -17,12 +17,24 @@ if (!is_file('vendor/autoload.php')) {
 include __DIR__ . '/bootstrap.php';
 @ob_end_clean();
 // comand list
-$commands                  = apply_filter('artisan\getCommands', []);
-$commands['init']          = new \wulaphp\command\InitCommand();
-$commands['create-module'] = new \wulaphp\command\CreateModuleCommand();
-$commands['create-ext']    = new \wulaphp\command\CreateExtensionCommand();
-$commands['create-table']  = new \wulaphp\command\CreateTableCommand();
-$commands['help']          = new \wulaphp\artisan\ArtisanHelpCommand();
+$commands = [];
+
+foreach (apply_filter('artisan\getCommands', []) as $key => $cmd) {
+	if (is_numeric($key)) {
+		$commands[ $cmd->cmd() ] = $cmd;
+	} else {
+		$commands[ $key ] = $cmd;
+	}
+}
+
+$commands['init'] = new \wulaphp\command\InitCommand();
+
+if (APP_MODE == 'dev') {
+	$commands['create:module'] = new \wulaphp\command\CreateModuleCommand();
+	$commands['create:ext']    = new \wulaphp\command\CreateExtensionCommand();
+}
+
+$commands['help'] = new \wulaphp\artisan\ArtisanHelpCommand();
 
 ksort($commands);
 

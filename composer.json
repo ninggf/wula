@@ -1,14 +1,16 @@
 {
   "name": "wula/wula",
-  "description": "wulaphp项目",
+  "description": "wulaphp炮架子，为基于wulaphp的应用提供初始的目录结构.",
   "require": {
 	"php": ">=5.6 || >= 7.1",
 	"ext-json": "*",
 	"ext-pdo": "*",
+	"ext-pdo_mysql": "*",
 	"ext-mbstring": "*",
 	"ext-curl": "*",
 	"ext-SPL": "*",
-	"wula/wulaphp": "^1.2"
+	"ext-mysqlnd": "*",
+	"wula/wulaphp": "*"
   },
   "require-dev": {
 	"psr/log": "^1.0",
@@ -16,13 +18,9 @@
   },
   "license": "MIT",
   "keywords": [
-	"PHP",
-	"MVC",
-	"module",
-	"plugin",
-	"extension"
+	"MVC","ORM","WEB"
   ],
-  "time": "2016-07-21",
+  "time": "2016-12-07",
   "scripts": {
 	"post-create-project-cmd": [
 	  "php artisan init"
@@ -39,6 +37,9 @@
 	}
   ],
   "extra": {
+	"wula": {
+	  "assets-dir": "vendor"
+	},
 	"branch-alias": {
 	  "dev-master": "1.0-dev"
 	}
@@ -46,5 +47,12 @@
   "support": {
 	"issues": "https://github.com/ninggf/wula/issues"
   },
-  "homepage": "http://www.wulaphp.com/"
+  "homepage": "http://www.wulaphp.com/",
+  "minimum-stability": "dev",
+  "repositories": [
+	{
+	  "type": "git",
+	  "url": "https://github.com/ninggf/wulaphp.git"
+	}
+  ]
 }

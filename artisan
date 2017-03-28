@@ -18,7 +18,7 @@ include __DIR__ . '/bootstrap.php';
 @ob_end_clean();
 // comand list
 $commands = [];
-
+/** @var \wulaphp\artisan\ArtisanCommand $cmd */
 foreach (apply_filter('artisan\getCommands', []) as $key => $cmd) {
 	if (is_numeric($key)) {
 		$commands[ $cmd->cmd() ] = $cmd;
@@ -26,21 +26,15 @@ foreach (apply_filter('artisan\getCommands', []) as $key => $cmd) {
 		$commands[ $key ] = $cmd;
 	}
 }
-
 $commands['init'] = new \wulaphp\command\InitCommand();
-
 if (APP_MODE == 'dev') {
 	$commands['create:module'] = new \wulaphp\command\CreateModuleCommand();
 	$commands['create:ext']    = new \wulaphp\command\CreateExtensionCommand();
 }
-
 $commands['help'] = new \wulaphp\artisan\ArtisanHelpCommand();
-
 ksort($commands);
-
 set_time_limit(0);
 $cmd = isset($argv[1]) ? $argv[1] : 'help';
-
 if (!isset($commands[ $cmd ])) {
 	$commands['help']->help("Unkown Command: " . $cmd);
 } else {

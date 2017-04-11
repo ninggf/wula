@@ -3,4 +3,4 @@ use wulaphp\app\App;
 
 define('WWWROOT', __DIR__ . DIRECTORY_SEPARATOR);
 include WWWROOT . '../bootstrap.php';
-App::run();
+return App::run();

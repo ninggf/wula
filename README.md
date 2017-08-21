@@ -23,7 +23,7 @@ wula
          |--controllers # 模块控制器目录
             |--IndexController.php # 默认控制器，首页请求由此控制器处理
          |--views # 视图目录
-            |--index # 对应Controller的视频目录
+            |--index # 对应Controller的视图目录
               |--index.tpl # 基于Smarty的视图模板文件，对应Controller中的Action.
          |--bootstrap.php # 模块引导文件
       | -- ... # 其它模块
@@ -34,7 +34,7 @@ wula
          |--template.php # 主题数据处理器定义文件 
    |--index.php # 网站入口,一般情况不需要修改.
 |--.env.example # 环境配置示例文件
-|--bootstrap.php # wulaphp引导文件
+|--bootstrap.php # 引导文件
 |--composer.json # composer配置文件
 |--artisan # wula命令行工具
 </pre>
@@ -143,7 +143,6 @@ server {
 ## 环境检测
 
 - 运行nginx或apache的用户对`tmp` 和 `logs`目录需要有可读可写权限.可通过`chmod 777 tmp logs`进行修改
-- 将`bootstrap.php`文件中的APPID常量修改为一个有意义的值且在同一个php运行环境此值不能重复.
 
 ## 安装验证
 

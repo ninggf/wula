@@ -22,9 +22,9 @@
 /* 如果你要重新定义扩展加载器,请修改 */
 // define('EXTENSION_LOADER_CLASS', 'wulaphp\app\ExtensionLoader');
 /* 如果你要重新定义配置加载器,请修改 */
-define('CONFIG_LOADER_CLASS', 'wula\cms\CmfConfigurationLoader');
+define('CONFIG_LOADER_CLASS', 'wulaphp\conf\ConfigurationLoader');
 /* 如果你要重新定义模块加载器,请 */
-define('MODULE_LOADER_CLASS', 'wula\cms\CmfModuleLoader');
+define('MODULE_LOADER_CLASS', 'wulaphp\app\ModuleLoader');
 // 以上配置选择性修改
 // //////////////////////////////////////////////////////////////////////////////
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!以下内容不可修改!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

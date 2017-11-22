@@ -4,9 +4,12 @@ wula
 <pre>
 wula
 |--conf # 配置目录，可通过CONF_DIR常量自定义
+   |--.env #开发环境配置
+   |--.env.example # 环境配置示例文件
    |--cache_config.php # 缓存配置文件
    |--config.php # 应用配置文件，可通过.env(将.env.example复制到.env)文件进行配置
    |--dbconfig.php # 数据库配置文件，可通过.env文件中的db段进行配置
+   |--cluster_config.php # 基于Redis的分布式运行时缓存 
 |--crontab # 定时任务运行目录，可随意命名，如果不需要定时任务可删除
    |--cron.php # 定时任务脚本, 通过crontab服务运行
 |--extensions # 扩展目录, 可通过EXTENSION_DIR常量自定义
@@ -33,7 +36,6 @@ wula
          |--404.tpl # 404页面模板
          |--template.php # 主题数据处理器定义文件 
    |--index.php # 网站入口,一般情况不需要修改.
-|--.env.example # 环境配置示例文件
 |--bootstrap.php # 引导文件
 |--composer.json # composer配置文件
 |--artisan # wula命令行工具

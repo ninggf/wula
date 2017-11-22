@@ -1,8 +1,7 @@
 <?php
-/**
+/*
  * 缓存配置
  */
-
 $config = new \wulaphp\conf\CacheConfiguration();
 $config->enabled(env('cache.enabled', 0));
 $type = env('cache.type');
@@ -14,7 +13,7 @@ if ($type == 'redis') {
 	$auth    = env('redis.auth');
 	$config->addRedisServer($host, $port, $db, $timeout, $auth);
 	$config->setDefaultCache(CACHE_TYPE_REDIS);
-} elseif ($type == 'memcached') {
+} else if ($type == 'memcached') {
 	$config->setDefaultCache(CACHE_TYPE_MEMCACHED);
 	$hosts = explode(',', env('memcached.host', 'localhost'));
 	$ports = explode(',', env('memcached.port', 11211));

@@ -18,7 +18,7 @@ include __DIR__ . '/bootstrap.php';
 @ob_end_clean();
 // comand list
 $commands = [];
-
+/**@var \wulaphp\artisan\ArtisanCommand $cmd */
 foreach (apply_filter('artisan\getCommands', []) as $key => $cmd) {
 	if (is_numeric($key)) {
 		$commands[ $cmd->cmd() ] = $cmd;
@@ -44,7 +44,7 @@ set_time_limit(0);
 $cmd = isset($argv[1]) ? $argv[1] : 'help';
 
 if (!isset($commands[ $cmd ])) {
-	$commands['help']->help("Unkown Command: " . $cmd);
+	$commands['help']->help("Unknown Command: " . $cmd);
 } else {
 	exit($commands[ $cmd ]->run());
 }

@@ -56,7 +56,10 @@ wula
 
 ## 1 安装
 
-通过composer安装: `composer create-project wula/wula`
+通过composer安装: 
+
+* 开发模式: `composer create-project wula/wula` 
+* 生产模式: `composer create-project --no-dev wula/wula`
 
 ## 2. 配置 
 wula可以部署在`apache`或`nginx`中，需要他们支持重写功能。

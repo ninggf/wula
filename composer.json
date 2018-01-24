@@ -10,7 +10,7 @@
 	"ext-curl": "*",
 	"ext-SPL": "*",
 	"ext-mysqlnd": "*",
-	"wula/wulaphp": "^1.5"
+	"wula/wulaphp": "^1.7"
   },
   "require-dev": {
 	"psr/log": "^1.0",
@@ -30,7 +30,9 @@
   },
   "type": "project",
   "config": {
-	"preferred-install": "dist"
+	"preferred-install": "dist",
+	"optimize-autoloader": true,
+	"classmap-authoritative": true
   },
   "authors": [
 	{

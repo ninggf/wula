@@ -16,6 +16,6 @@ class IndexController extends Controller {
 
 	public function index() {
 		// 可以按需修改
-		return template('default/index.tpl', ['nihao' => 'Hello wula']);
+		return template('index.tpl', ['nihao' => 'Hello wula']);
 	}
 }

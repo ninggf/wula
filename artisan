@@ -28,9 +28,7 @@ foreach (apply_filter('artisan\getCommands', []) as $key => $cmd) {
 }
 
 $commands['init'] = new \wulaphp\command\InitCommand();
-if (APP_MODE != 'pro') {
-	$commands['serve'] = new \wulaphp\command\DevServerCommand();
-}
+
 if (APP_MODE == 'dev') {
 	$commands['create:module'] = new \wulaphp\command\CreateModuleCommand();
 	$commands['create:ext']    = new \wulaphp\command\CreateExtensionCommand();

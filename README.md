@@ -1,6 +1,4 @@
-wula
-==========
-**wula**(`wula@php`)是[wulaphp]框架的炮架子，它为[wulaphp]框架提供`web`应用开发的基础目录结构:
+**wula**(`wula@php`、乌拉)是[wulaphp]框架的炮架子，它为[wulaphp]框架提供`web`应用开发的基础目录结构:
 <pre>
 wula
 |--conf # 配置目录，可通过CONF_DIR常量自定义
@@ -20,6 +18,7 @@ wula
 |--tmp # 运行临时目录，可通过TMP_DIR常量自定义
 |--vendor # composer库目录,不可自定义
 |--wwwroot # 网站根目录，如果网站根目录不是此目录，需要修改WWWROOT_DIR常量值
+   |--assets  # 公共资源目录，类型为wula-assset的composer包会安装到此目录
    |--modules # 模块目录, 可通过MODULE_DIR常量修改。
       |--home # home模块
          |--classes # 模块类目录，此目录中的类文件可以按需自动加载(autoload) 
@@ -34,8 +33,13 @@ wula
       |--default # 默认主题
          |--index.tpl # 网站首页模板
          |--404.tpl # 404页面模板
+         |--403.tpl # 403页面模板
+         |--500.tpl # 500页面模板
          |--template.php # 主题数据处理器定义文件 
    |--index.php # 网站入口,一般情况不需要修改.
+   |--robots.txt # 蜘蛛抓取规则文件（可删除）
+   |--favicon.ico # 网站图标（可删除）
+   |--crossdomain.xml # flash跨域文件（可删除）
 |--bootstrap.php # 引导文件
 |--composer.json # composer配置文件
 |--artisan # wula命令行工具
@@ -51,12 +55,11 @@ wula
 
 
 ## 1 安装
-目前推荐的安装方式composer:
 
-`composer create-project wula/wula`
+通过composer安装: `composer create-project wula/wula`
 
 ## 2. 配置 
-推荐使用`nginx`的配置.
+wula可以部署在`apache`或`nginx`中，需要他们支持重写功能。
 
 ### 2.1 apache 配置
 - `apache` 需要开启重写功能支持
@@ -125,9 +128,10 @@ server {
     }        
     error_page  404              /404.html;
     location ~ \.php$ {
-        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_pass   127.0.0.1:9000; #unix:/tmp/fpm56.sock;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME  $document_root/$fastcgi_script_name;
+        #fastcgi_param  APPMODE pro;
         include        fastcgi_params;
     }
     location ~ /\.ht {
@@ -140,20 +144,29 @@ server {
 >
 > `your_project_public_dir` 应指是 `wwwroot`的绝对路径.
 > 
+> 可以通过`fastcgi_param  APPMODE` 来定义wulaphp的运行模式:
+>   * pro 为线上生产环境
+>   * dev 为开发环境（默认）
+>   * test 为测试环境
+> 
 > 配置完成后重新加载nginx的配置生效.
 
 ## 环境检测
 
-- 运行nginx或apache的用户对`tmp` 和 `logs`目录需要有可读可写权限.可通过`chmod 777 tmp logs`进行修改
+- 运行nginx或apache的用户对`tmp` 和 `logs`目录需要有可读可写权限.可通过`chmod 777 tmp logs`进行修改或直接运行命令`php artisan init`。
 
 ## 安装验证
 
 - 安装完成后通过浏览器访问[http://your_server_name/](http://your_server_name/) 看到以下输出说明安装成功：**Hello wula !!**
 
-### BUG提交与参与
+## 接下来
+
+你可以立即从这儿详细了解[wulaphp](https://github.com/ninggf/wulaphp/wiki)的方方面面， Have fun!.
+
+## BUG提交与参与
 - 如果任何问题或建议请到[issues](https://github.com/ninggf/wula/issues)提交。
 - 如果您对wula感兴趣，欢迎fork并提交您的代码。
 - 您还可以加入我们的QQ群: 371487281。
-- 了解wulaphp请传送至[wulaphp].
+- 详细文档传送至[wulaphp].
 
 [wulaphp]: https://github.com/ninggf/wulaphp

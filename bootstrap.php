@@ -7,8 +7,6 @@
 # define('PUBLIC_DIR', 'wwwroot');
 /* 如果你想改变assets目录名，请联消下一行注释并修改其值 */
 # define('ASSETS_DIR', 'assets');
-/* 如果你想改变vendor目录名，请联消下一行注释并修改其值 */
-# define('VENDOR_DIR', 'vendor');
 /* 如果你想改modules目录名，请取消下一行注释并修改其值. */
 # define ('MODULE_DIR', 'modules' );
 /* 如果你想改themes目录名，请取消下一行注释并修改其值. */
@@ -36,7 +34,6 @@ defined('PUBLIC_DIR') or define('PUBLIC_DIR', 'wwwroot');
 if (!defined('WWWROOT')) {
 	define('WWWROOT', APPROOT . PUBLIC_DIR . DIRECTORY_SEPARATOR);
 }
-defined('VENDOR_DIR') or define('VENDOR_DIR', 'vendor');
 // 加载composer的autoload.
-require APPROOT . VENDOR_DIR . DIRECTORY_SEPARATOR . 'autoload.php';
+require APPROOT . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 // end of bootstrap.php

@@ -53,13 +53,25 @@ wula
 > 3. `wwwroot`目录名可以自定义.
 > 4. 以上所有常量的自定义都应该放在`bootstrap.php`文件中.
 
+## 0 环境要求
+
+* php >=5.6.9 || >= 7.1
+* PDO (PDO_MySQL)
+* mysqlnd 扩展
+* mbstring 扩展
+* curl 扩展
+* json 扩展
+* SPL 扩展
 
 ## 1 安装
 
-通过composer安装: 
+## 1.1 通过composer安装: 
 
 * 开发模式: `composer create-project wula/wula` 
 * 生产模式: `composer create-project --no-dev wula/wula`
+
+## 1.2 压缩文件安装
+从这儿[下载](https://pan.baidu.com/s/1KBWNwtNkjPw_2LCsQ4rqkg)，然后解压。
 
 ## 2. 配置 
 wula可以部署在`apache`或`nginx`中，需要他们支持重写功能。
@@ -173,3 +185,7 @@ server {
 - 详细文档传送至[wulaphp].
 
 [wulaphp]: https://github.com/ninggf/wulaphp
+
+
+
+

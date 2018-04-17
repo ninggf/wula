@@ -10,11 +10,15 @@
 	"ext-curl": "*",
 	"ext-SPL": "*",
 	"ext-mysqlnd": "*",
-	"wula/wulaphp": "^1.7"
+	"wula/wulaphp": ">=1.14"
   },
   "require-dev": {
 	"psr/log": "^1.0",
 	"phpunit/phpunit": "*"
+  },
+  "suggest": {
+	"ext-yac": "for runtime cache to improve performance",
+	"ext-redis": "for cache to improve performance"
   },
   "license": "MIT",
   "keywords": [

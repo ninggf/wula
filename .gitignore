@@ -20,3 +20,4 @@ install.lock
 extensions/
 modules/
 themes/
+wwwroot/assets/jqadmin/

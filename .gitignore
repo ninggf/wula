@@ -4,6 +4,8 @@
 .project
 .idea
 *.log
+*.pid
+*.tmp
 .vscode
 dummy.php
 conf/*_dev.php
@@ -12,12 +14,8 @@ conf/*_dev.php
 # composer
 vendor/
 composer.lock
-tmp/
 # wulaphp
 test.php
-install.lock
 .env
-extensions/
-modules/
-themes/
-wwwroot/assets/jqadmin/
+tmp/
+logs/

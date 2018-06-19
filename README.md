@@ -14,28 +14,29 @@ wula
    |-- ... # 扩展的实现...
 |--includes # 应用使用的第三方库（不可通过composer加载），可通过LIBS_DIR常量自定义
    |-- common.php # 第三方库加载入口。
-|--logs # 目录日志，可通过LOGS_DIR常量自定义
-|--tmp # 运行临时目录，可通过TMP_DIR常量自定义
+|--storage # 存储目录
+   |--logs # 目录日志，可通过LOGS_DIR常量自定义
+   |--tmp # 运行临时目录，可通过TMP_DIR常量自定义
 |--vendor # composer库目录,不可自定义
+|--modules # 模块目录, 可通过MODULE_DIR常量修改。
+   |--home # home模块
+     |--classes # 模块类目录，此目录中的类文件可以按需自动加载(autoload) 
+     |--controllers # 模块控制器目录
+        |--IndexController.php # 默认控制器，首页请求由此控制器处理
+     |--views # 视图目录
+        |--index # 对应Controller的视图目录
+          |--index.tpl # 基于Smarty的视图模板文件，对应Controller中的Action.
+     |--bootstrap.php # 模块引导文件
+   | -- ... # 其它模块
+|--themes # 网站前台主题目录,可通过THEME_DIR常量自定义
+   |--default # 默认主题
+     |--index.tpl # 网站首页模板
+     |--404.tpl # 404页面模板
+     |--403.tpl # 403页面模板
+     |--500.tpl # 500页面模板
+     |--template.php # 主题数据处理器定义文件 
 |--wwwroot # 网站根目录，如果网站根目录不是此目录，需要修改WWWROOT_DIR常量值
    |--assets  # 公共资源目录，类型为wula-assset的composer包会安装到此目录
-   |--modules # 模块目录, 可通过MODULE_DIR常量修改。
-      |--home # home模块
-         |--classes # 模块类目录，此目录中的类文件可以按需自动加载(autoload) 
-         |--controllers # 模块控制器目录
-            |--IndexController.php # 默认控制器，首页请求由此控制器处理
-         |--views # 视图目录
-            |--index # 对应Controller的视图目录
-              |--index.tpl # 基于Smarty的视图模板文件，对应Controller中的Action.
-         |--bootstrap.php # 模块引导文件
-      | -- ... # 其它模块
-   |--themes # 网站前台主题目录,可通过THEME_DIR常量自定义
-      |--default # 默认主题
-         |--index.tpl # 网站首页模板
-         |--404.tpl # 404页面模板
-         |--403.tpl # 403页面模板
-         |--500.tpl # 500页面模板
-         |--template.php # 主题数据处理器定义文件 
    |--index.php # 网站入口,一般情况不需要修改.
    |--robots.txt # 蜘蛛抓取规则文件（可删除）
    |--favicon.ico # 网站图标（可删除）
@@ -44,7 +45,6 @@ wula
 |--composer.json # composer配置文件
 |--artisan # wula命令行工具
 </pre>
-
 
 > 注：
 > 
@@ -185,7 +185,3 @@ server {
 - 详细文档传送至[wulaphp].
 
 [wulaphp]: https://github.com/ninggf/wulaphp
-
-
-
-

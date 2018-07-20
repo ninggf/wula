@@ -1,6 +1,6 @@
 {
   "name": "wula/wula",
-  "description": "我们努力做一个比较优秀的内容管理框架(CMF)，争取让她像异星战场中的乌拉一样快",
+  "description": "wulaphp的炮架子，初始化wulaphp应用目录结构。",
   "require": {
 	"php": ">=7.1",
 	"ext-json": "*",
@@ -11,7 +11,7 @@
 	"ext-curl": "*",
 	"ext-SPL": "*",
 	"ext-mysqlnd": "*",
-	"wula/wulaphp": "v2.0.0.x-dev"
+	"wula/wulaphp": "^2.0"
   },
   "license": "MIT",
   "keywords": [
@@ -19,11 +19,6 @@
 	"CMS"
   ],
   "time": "2016-12-07",
-  "scripts": {
-	"post-create-project-cmd": [
-	  "php artisan init"
-	]
-  },
   "type": "project",
   "config": {
 	"preferred-install": "dist",
@@ -38,42 +33,11 @@
   ],
   "extra": {
 	"branch-alias": {
-	  "dev-master": "1.0-dev"
+	  "dev-master": "2.0-dev"
 	}
   },
   "support": {
 	"issues": "https://github.com/ninggf/wulacms/issues"
   },
-  "homepage": "http://www.wulacms.com/",
-  "minimum-stability": "dev",
-  "repositories": [
-	{
-	  "type": "git",
-	  "url": "https://github.com/ninggf/wulaphp.git"
-	},
-	{
-	  "type": "git",
-	  "url": "https://github.com/ninggf/wulacms_extension_cms.git"
-	},
-	{
-	  "type": "git",
-	  "url": "https://github.com/ninggf/wulacms_module_cms.git"
-	},
-	{
-	  "type": "git",
-	  "url": "https://github.com/ninggf/wula_assets_jqadmin.git"
-	},
-	{
-	  "type": "git",
-	  "url": "https://github.com/ninggf/wulacms_module_backend.git"
-	},
-	{
-	  "type": "git",
-	  "url": "https://github.com/ninggf/wulacms_module_system.git"
-	},
-	{
-	  "type": "git",
-	  "url": "https://github.com/ninggf/wulacms_module_wechat.git"
-	}
-  ]
+  "homepage": "http://www.wulacms.com/"
 }

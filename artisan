@@ -27,12 +27,9 @@ foreach (apply_filter('artisan\getCommands', []) as $key => $cmd) {
 	}
 }
 
-if (APP_MODE == 'dev') {
-	$commands['create:module'] = new \wulaphp\command\CreateModuleCommand();
-	$commands['create:ext']    = new \wulaphp\command\CreateExtensionCommand();
-}
-
-$commands['help'] = new \wulaphp\artisan\ArtisanHelpCommand();
+$commands['create:module']    = new \wulaphp\command\CreateModuleCommand();
+$commands['create:extension'] = new \wulaphp\command\CreateExtensionCommand();
+$commands['help']             = new \wulaphp\artisan\ArtisanHelpCommand();
 
 ksort($commands);
 

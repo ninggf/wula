@@ -42,7 +42,6 @@ define('GZIP_ENABLED', true);
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!以下内容不可修改!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // //////////////////////////////////////////////////////////////////////////////
 define('APPROOT', __DIR__ . DIRECTORY_SEPARATOR);
-# define('WULACMF_WEB_INSTALLER', 1);
 defined('PUBLIC_DIR') or define('PUBLIC_DIR', 'wwwroot');
 if (!defined('WWWROOT')) {
 	define('WWWROOT', APPROOT . PUBLIC_DIR . DIRECTORY_SEPARATOR);

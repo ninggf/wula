@@ -1,6 +1,6 @@
 {
   "name": "wula/wula",
-  "description": "我们努力做一个比较优秀的内容管理框架(CMF)，争取让她像异星战场中的乌拉一样快",
+  "description": "wulaphp的炮架子，初始化wulaphp应用目录结构。",
   "require": {
 	"php": ">=7.1",
 	"ext-json": "*",

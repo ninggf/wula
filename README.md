@@ -70,9 +70,6 @@ wula
 * 开发模式: `composer create-project wula/wula` 
 * 生产模式: `composer create-project --no-dev wula/wula`
 
-## 1.2 压缩文件安装
-从这儿[下载](https://pan.baidu.com/s/1KBWNwtNkjPw_2LCsQ4rqkg)，然后解压。
-
 ## 2. 配置 
 wula可以部署在`apache`或`nginx`中，需要他们支持重写功能。
 

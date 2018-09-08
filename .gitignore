@@ -19,3 +19,4 @@ test.php
 .env
 tmp/
 logs/
+storage/mysql/

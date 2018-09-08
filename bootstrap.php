@@ -1,4 +1,6 @@
 <?php
+/* 是否开启gzip压缩 */
+define('GZIP_ENABLED', true);
 /* 运行模式 */
 # define('APP_MODE', 'pro');
 /* 你可以配置系统的默认模块配置 */
@@ -23,14 +25,8 @@
 # define ('CONF_DIR', 'conf' );
 /* 如果你想改libs目录名，请取消下一行注释并修改其值. */
 # define ('LIBS_DIR', 'includes' );
-/* 是否开启防雪崩机制 */
-# define('ANTI_AVALANCHE', true);
-/* 是否开启防CC机制（访问次数/每多少秒），需要在ccredis_config.php配置redis支持 */
-# define('ANTI_CC','10/60');
 /* 重新定义运行时内存限制 */
 # define ('RUNTIME_MEMORY_LIMIT', '128M' );
-/* 是否开启gzip压缩 */
-define('GZIP_ENABLED', true);
 /* 如果你要重新定义扩展加载器,请修改 */
 # define('EXTENSION_LOADER_CLASS', 'wulaphp\app\ExtensionLoader');
 /* 如果你要重新定义配置加载器,请修改 */

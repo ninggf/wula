@@ -1,48 +1,52 @@
 {
-  "name": "wula/wula",
-  "description": "wulaphp的炮架子，初始化wulaphp应用目录结构。",
-  "require": {
-	"php": ">=7.1",
-	"ext-json": "*",
-	"ext-pdo": "*",
-	"ext-pdo_mysql": "*",
-	"ext-mbstring": "*",
-	"ext-xml": "*",
-	"ext-curl": "*",
-	"ext-SPL": "*",
-	"ext-mysqlnd": "*",
-	"wula/wulaphp": "^v2.0"
-  },
-  "suggest": {
-	"ext-sockets": "for service command",
-	"ext-posix": "for artisan tool",
-	"ext-pcntl": "for artisan tool"
-  },
-  "license": "MIT",
-  "keywords": [
-	"CMF",
-	"CMS"
-  ],
-  "time": "2016-12-07",
-  "type": "project",
-  "config": {
-	"preferred-install": "dist",
-	"optimize-autoloader": true,
-	"classmap-authoritative": true
-  },
-  "authors": [
-	{
-	  "name": "Leo Ning",
-	  "email": "windywany@gmail.com"
-	}
-  ],
-  "extra": {
-	"branch-alias": {
-	  "dev-master": "2.0-dev"
-	}
-  },
-  "support": {
-	"issues": "https://github.com/ninggf/wulacms/issues"
-  },
-  "homepage": "https://www.wulacms.com/"
+    "name": "wula/wula",
+    "description": "wulaphp框架的炮架子，为其初始化目录结构。",
+    "require": {
+        "php": ">=5.6.9",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-mbstring": "*",
+        "ext-libxml": "*",
+        "ext-xml": "*",
+        "ext-curl": "*",
+        "ext-SPL": "*",
+        "ext-mysqlnd": "*",
+        "wula/wulaphp": "^v2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "suggest": {
+        "ext-sockets": "*",
+        "ext-posix": "*",
+        "ext-pcntl": "*"
+    },
+    "license": "MIT",
+    "keywords": [
+        "CMF",
+        "CMS"
+    ],
+    "time": "2016-12-07",
+    "type": "project",
+    "config": {
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "classmap-authoritative": true
+    },
+    "authors": [
+        {
+            "name": "Leo Ning",
+            "email": "windywany@gmail.com"
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    },
+    "support": {
+        "issues": "https://github.com/ninggf/wulacms/issues"
+    },
+    "homepage": "https://www.wulacms.com/"
 }

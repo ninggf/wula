@@ -1,4 +1,7 @@
+# wula(乌拉)
+
 **wula**(`wula@php`、乌拉)是[wulaphp]框架的炮架子，它为[wulaphp]框架提供`web`应用开发的基础目录结构:
+
 <pre>
 wula
 |--conf # 配置目录，可通过CONF_DIR常量自定义
@@ -8,6 +11,8 @@ wula
    |--config.php # 应用配置文件，可通过.env(将.env.example复制到.env)文件进行配置
    |--dbconfig.php # 数据库配置文件，可通过.env文件中的db段进行配置
    |--cluster_config.php # 基于Redis的分布式运行时缓存 
+   |--redis_config.php # redis配置文件
+   |--site.conf # docker中nginx的网站配置文件
 |--crontab # 定时任务运行目录，可随意命名，如果不需要定时任务可删除
    |--cron.php # 定时任务脚本, 通过crontab服务运行
 |--extensions # 扩展目录, 可通过EXTENSION_DIR常量自定义
@@ -27,7 +32,8 @@ wula
         |--index # 对应Controller的视图目录
           |--index.tpl # 基于Smarty的视图模板文件，对应Controller中的Action.
      |--bootstrap.php # 模块引导文件
-   | -- ... # 其它模块
+   |-- ... # 其它模块
+   |-- alias.php # URL别名配置文件
 |--themes # 网站前台主题目录,可通过THEME_DIR常量自定义
    |--default # 默认主题
      |--index.tpl # 网站首页模板
@@ -35,15 +41,18 @@ wula
      |--403.tpl # 403页面模板
      |--500.tpl # 500页面模板
      |--template.php # 主题数据处理器定义文件 
+   |--theme1 # 其它主题
+     |--...
 |--wwwroot # 网站根目录，如果网站根目录不是此目录，需要修改WWWROOT_DIR常量值
    |--assets  # 公共资源目录，类型为wula-assset的composer包会安装到此目录
    |--index.php # 网站入口,一般情况不需要修改.
    |--robots.txt # 蜘蛛抓取规则文件（可删除）
    |--favicon.ico # 网站图标（可删除）
    |--crossdomain.xml # flash跨域文件（可删除）
+|--artisan # wula命令行工具
 |--bootstrap.php # 引导文件
 |--composer.json # composer配置文件
-|--artisan # wula命令行工具
+|--docker-compose.sample.yml # docker-compose 样例文件
 </pre>
 
 > 注：
@@ -55,13 +64,14 @@ wula
 
 ## 0 环境要求
 
-* php >=5.6.9 || >= 7.1
+* PHP >=5.6.9
 * PDO (PDO_MySQL)
 * mysqlnd 扩展
 * mbstring 扩展
 * curl 扩展
 * json 扩展
 * SPL 扩展
+* Reflection 扩展
 
 ## 1 安装
 
@@ -70,6 +80,11 @@ wula
 * 开发模式: `composer create-project wula/wula` 
 * 生产模式: `composer create-project --no-dev wula/wula`
 
+## 1.2 直接clone
+1. `$ git clone https://github.com/ninggf/wula.git your_project_dir`
+2. `$ cd your_project_dir`
+3. `$ composer install [--no-dev]`
+ 
 ## 2. 配置 
 wula可以部署在`apache`或`nginx`中，需要他们支持重写功能。
 
@@ -135,7 +150,7 @@ server {
             rewrite ^(.*)$ index.php last;
         }
     }
-    location ~ /(modules|assets|themes)/.+\.(php[s345]?|tpl|inc)$ {
+    location ~ /assets/.+\.(php[s345]?|tpl|inc)$ {
         return 404;
     }        
     error_page  404              /404.html;
@@ -163,9 +178,18 @@ server {
 > 
 > 配置完成后重新加载nginx的配置生效.
 
+### 2.3 docker
+1. 重命名`docker-compose.sample.yml`为`docker-compose.yml`
+2. 按需要修改`docker-compose.yml`和`conf/site.conf`
+3. 启动docker: `$ docker-compose up -d`
+
 ## 环境检测
 
-- 运行nginx或apache的用户对`tmp` 和 `logs`目录需要有可读可写权限.可通过`chmod 777 tmp logs`进行修改或直接运行命令`php artisan init`。
+- 运行nginx或apache的用户对`storage`并其子目录需要有可读可写权限.可通过命令
+
+`$ chmod 777 storage storage/tmp storage/logs`
+
+进行修改。
 
 ## 安装验证
 
@@ -176,9 +200,8 @@ server {
 你可以立即从这儿详细了解[wulaphp](https://github.com/ninggf/wulaphp/wiki)的方方面面， Have fun!.
 
 ## BUG提交与参与
-- 如果任何问题或建议请到[issues](https://github.com/ninggf/wula/issues)提交。
+- 如果有任何问题或建议请到[issues](https://github.com/ninggf/wula/issues)提交。
 - 如果您对wula感兴趣，欢迎fork并提交您的代码。
 - 您还可以加入我们的QQ群: 371487281。
-- 详细文档传送至[wulaphp].
 
 [wulaphp]: https://github.com/ninggf/wulaphp

@@ -1,0 +1,9 @@
+<phpunit bootstrap="bootstrap.php"
+         colors="true"
+         backupGlobals="false" backupStaticAttributes="false">
+    <testsuites>
+        <testsuite name="wulaphp">
+            <directory>vendor/wula/wulaphp/tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

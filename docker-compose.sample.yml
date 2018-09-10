@@ -25,8 +25,9 @@ services:
     expose:
     - "9000"
     environment:
-      XDEBUG_REMOTE_HOST: 192.168.31.236 #请换成你本机的IP(注不是container的IP哦)
+      XDEBUG_REMOTE_HOST: 172.16.100.200 #请换成你本机的IP(注不是container的IP哦)
       XDEBUG_REMOTE_PORT: 9000
+      XDEBUG_ENABLE: 0
     links:
     - "db"
     - "redis"

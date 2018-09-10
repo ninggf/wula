@@ -20,3 +20,4 @@ test.php
 tmp/
 logs/
 storage/mysql/
+docker-compose.yml

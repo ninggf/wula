@@ -1,9 +1,22 @@
-<phpunit bootstrap="bootstrap.php"
+<phpunit bootstrap="./bootstrap.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         stopOnFailure="false"
          colors="true"
-         backupGlobals="false" backupStaticAttributes="false">
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false">
+
     <testsuites>
-        <testsuite name="wulaphp">
+        <testsuite name="Full Wulaphp Test Suite">
             <directory>vendor/wula/wulaphp/tests</directory>
         </testsuite>
     </testsuites>
+
+    <groups>
+        <exclude>
+            <group>legacy</group>
+        </exclude>
+    </groups>
 </phpunit>

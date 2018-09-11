@@ -1,4 +1,12 @@
-# wula(乌拉)
+<p align="center"><img src="https://d33wubrfki0l68.cloudfront.net/images/1d83c09b2f0cd8231a54f2a8a6eaee9754b802fb/logo.png" width="140" height="140"></p>
+<p align="center">
+<a href="https://travis-ci.org/wula/wula"><img src="https://travis-ci.org/ninggf/wula.svg?branch=v2.0" alt="Build Status"></a>
+<a href="https://packagist.org/packages/wula/wulaphp"><img src="https://poser.pugx.org/wula/wulaphp/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/wula/wulaphp"><img src="https://poser.pugx.org/wula/wulaphp/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/wula/wulaphp"><img src="https://poser.pugx.org/wula/wulaphp/license.svg" alt="License"></a>
+</p>
+
+# 关于wula(乌拉)
 
 **wula**(`wula@php`、乌拉)是[wulaphp]框架的炮架子，它为[wulaphp]框架提供`web`应用开发的基础目录结构:
 

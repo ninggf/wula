@@ -1,4 +1,6 @@
-<phpunit bootstrap="./bootstrap.php"
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="./tests/bootstrap.php"
          backupGlobals="false"
          backupStaticAttributes="false"
          stopOnFailure="false"
@@ -9,8 +11,8 @@
          processIsolation="false">
 
     <testsuites>
-        <testsuite name="Full Wulaphp Test Suite">
-            <directory>vendor/wula/wulaphp/tests</directory>
+        <testsuite name="wula Test Suite">
+            <directory suffix="Test.php">tests/mvc</directory>
         </testsuite>
     </testsuites>
 

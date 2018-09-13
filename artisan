@@ -1,17 +1,17 @@
 #!/usr/bin/env php
 <?php
 if (PHP_SAPI !== 'cli') {
-	echo 'ERROR: Composer should be invoked via the CLI version of PHP, not the ' . PHP_SAPI . ' SAPI' . PHP_EOL;
-	exit(1);
+    echo 'ERROR: Composer should be invoked via the CLI version of PHP, not the ' . PHP_SAPI . ' SAPI' . PHP_EOL;
+    exit(1);
 }
 
 if (!is_file('vendor/autoload.php')) {
-	if (isset($_SERVER['TERM']) && $_SERVER['TERM'] == 'xterm-256color') {
-		echo "\033[0;31mERROR:\033[0m\n\tPlease run \033[1;37m\033[41mcomposer install\033[0m first!\n";
-	} else {
-		echo "ERROR:\n\tPlease run composer install first!\n";
-	}
-	exit(1);
+    if (isset($_SERVER['TERM']) && $_SERVER['TERM'] == 'xterm-256color') {
+        echo "\033[0;31mERROR:\033[0m\n\tPlease run \033[1;37m\033[41mcomposer install\033[0m first!\n";
+    } else {
+        echo "ERROR:\n\tPlease run composer install first!\n";
+    }
+    exit(1);
 }
 
 include __DIR__ . '/bootstrap.php';
@@ -20,29 +20,24 @@ if (@ob_get_status()) @ob_end_clean();
 $commands = [];
 /**@var \wulaphp\artisan\ArtisanCommand $cmd */
 foreach (apply_filter('artisan\getCommands', []) as $key => $cmd) {
-	if (is_numeric($key)) {
-		$commands[ $cmd->cmd() ] = $cmd;
-	} else {
-		$commands[ $key ] = $cmd;
-	}
+    if (is_numeric($key)) {
+        $commands[ $cmd->cmd() ] = $cmd;
+    } else {
+        $commands[ $key ] = $cmd;
+    }
 }
-if (APP_MODE == 'dev') {
-	$commands['create:module']    = new \wulaphp\command\CreateModuleCommand();
-	$commands['create:extension'] = new \wulaphp\command\CreateExtensionCommand();
-}
-
 ksort($commands);
 
 set_time_limit(0);
 $cmd = isset($argv[1]) ? $argv[1] : 'help';
 
 if (!isset($commands[ $cmd ]) && $cmd != 'help') {
-	$cmdi = new \wulaphp\artisan\ArtisanHelpCommand();
-	$cmdi->help("Unknown Command: " . $cmd);
+    $cmdi = new \wulaphp\artisan\ArtisanHelpCommand();
+    $cmdi->help("Unknown Command: " . $cmd);
 } else if ($cmd == 'help') {
-	$cmdi = new \wulaphp\artisan\ArtisanHelpCommand();
-	exit($cmdi->run());
+    $cmdi = new \wulaphp\artisan\ArtisanHelpCommand();
+    exit($cmdi->run());
 } else {
-	exit($commands[ $cmd ]->run());
+    exit($commands[ $cmd ]->run());
 }
 // end of artisan

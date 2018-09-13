@@ -30,13 +30,20 @@ ksort($commands);
 
 set_time_limit(0);
 $cmd = isset($argv[1]) ? $argv[1] : 'help';
-
-if (!isset($commands[ $cmd ]) && $cmd != 'help') {
-    $cmdi = new \wulaphp\artisan\ArtisanHelpCommand();
-    $cmdi->help("Unknown Command: " . $cmd);
-} else if ($cmd == 'help') {
+if ($cmd == '-v') {
+    $color = new \wulaphp\artisan\Colors();
+    echo $color->str('wulaphp', 'green'), ' version ', $color->str(WULA_VERSION, 'yellow'), ' ', WULA_RELEASE, "\n";
+    exit(0);
+} else if ($cmd == 'help' || $cmd == '--help' || $cmd == '-h') {
     $cmdi = new \wulaphp\artisan\ArtisanHelpCommand();
     exit($cmdi->run());
+} else if (!isset($commands[ $cmd ])) {
+    $cmdi = new \wulaphp\artisan\ArtisanHelpCommand();
+    if ($cmd{0} == '-') {
+        $cmdi->help("Unknown Option: " . $cmd);
+    } else {
+        $cmdi->help("Unknown Command: " . $cmd);
+    }
 } else {
     exit($commands[ $cmd ]->run());
 }

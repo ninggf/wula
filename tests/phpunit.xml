@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit bootstrap="./tests/bootstrap.php"
+<phpunit bootstrap="./bootstrap.php"
          backupGlobals="false"
          backupStaticAttributes="false"
          stopOnFailure="false"
@@ -12,7 +12,7 @@
 
     <testsuites>
         <testsuite name="wula Test Suite">
-            <directory suffix="Test.php">tests/mvc</directory>
+            <directory suffix="Test.php">mvc</directory>
         </testsuite>
     </testsuites>
 

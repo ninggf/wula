@@ -46,8 +46,11 @@ define('GZIP_ENABLED', true);
 define('APPROOT', __DIR__ . DIRECTORY_SEPARATOR);
 defined('PUBLIC_DIR') or define('PUBLIC_DIR', 'wwwroot');
 if (!defined('WWWROOT')) {
-	define('WWWROOT', APPROOT . PUBLIC_DIR . DIRECTORY_SEPARATOR);
+    define('WWWROOT', APPROOT . PUBLIC_DIR . DIRECTORY_SEPARATOR);
 }
-// 加载composer的autoload.
-require APPROOT . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+if (defined('PHPUNIT_COMPOSER_INSTALL')) {
+    require APPROOT . 'vendor' . DIRECTORY_SEPARATOR . 'wula/wulaphp/bootstrap.php';
+} else {
+    require APPROOT . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+}
 // end of bootstrap.php

@@ -8,6 +8,6 @@
  * file that was distributed with this source code.
  */
 // your alias here
-//return [
-//	'add' => 'home/add'
-//];
+return [
+    'sub' => 'testm/sub'
+];

@@ -30,6 +30,7 @@
             color: red;
             margin-top: -90px;
             width: 600px;
+            text-align: center;
         }
     </style>
 </head>

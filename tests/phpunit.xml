@@ -21,4 +21,19 @@
             <!--<group>demo</group>-->
         </exclude>
     </groups>
+
+    <filter>
+        <!--<whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../modules/</directory>
+            <exclude>
+            </exclude>
+        </whitelist>-->
+    </filter>
+
+    <logging>
+        <log type="junit" target="../storage/report/result.xml"/>
+        <log type="testdox-html" target="../storage/report/testdox.html"/>
+        <!--<log type="coverage-clover" target="../storage/report/coverage.xml"/>-->
+    </logging>
+
 </phpunit>

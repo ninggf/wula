@@ -28,6 +28,8 @@ class InstallTest extends TestCase {
     public function testModuleLoaded() {
         $loader = App::moduleLoader();
         self::assertTrue($loader instanceof ModuleLoader);
+        $module = App::getModule('home');
+        self::assertNotNull($module);
     }
 
     /**
@@ -35,7 +37,7 @@ class InstallTest extends TestCase {
      * @depends testModuleLoaded
      * @throws \Exception
      */
-    public function testHomePage() {
+    public function testViewHomePage() {
         $module = App::getModule('home');
         self::assertNotNull($module, 'home module is not loaded');
         @ob_start();

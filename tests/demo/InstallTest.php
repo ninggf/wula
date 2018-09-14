@@ -8,12 +8,17 @@
  * file that was distributed with this source code.
  */
 
-namespace mvc;
+namespace demo;
 
 use PHPUnit\Framework\TestCase;
 use wulaphp\app\App;
 use wulaphp\app\ModuleLoader;
 
+/**
+ * Class InstallTest
+ * @package demo
+ * @group   demo
+ */
 class InstallTest extends TestCase {
 
     public function testConstant() {

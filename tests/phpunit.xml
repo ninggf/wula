@@ -12,13 +12,13 @@
 
     <testsuites>
         <testsuite name="wula Test Suite">
-            <directory suffix="Test.php">mvc</directory>
+            <directory suffix="Test.php">demo/</directory>
         </testsuite>
     </testsuites>
 
     <groups>
         <exclude>
-            <group>legacy</group>
+            <!--<group>demo</group>-->
         </exclude>
     </groups>
 </phpunit>

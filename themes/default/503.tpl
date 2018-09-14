@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>500 Internal Server Error</title>
+    <title>503 Service Unavailable</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         pre {
@@ -30,6 +30,7 @@
             color: red;
             margin-top: -90px;
             width: 600px;
+            text-align: center;
         }
     </style>
 </head>
@@ -44,7 +45,7 @@
         `;_:    `"'
       .'"""""`.
      //, ya ,\\
-    //  500!  \\
+    //  503!  \\
     `-._______.-'
     ___`. | .'___
    (______|______)

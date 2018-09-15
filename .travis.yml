@@ -35,6 +35,27 @@ install:
 - composer install $flags
 
 script:
-- ls -d tests/**/* | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c tests/phpunit.xml --colors=always {} || (echo -e "\e[41mFAILED\e[0m {}" && exit 1);'
 - ./artisan admin create-module testm
 - ./artisan admin create-ext -b myext
+- ls -d tests/**/* | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c tests/phpunit.xml --colors=always {} || (echo -e "\e[41mFAILED\e[0m {}" && exit 1);'
+
+before_deploy:
+- rm -rf modules/testm extensions/myext storage/report storage/tmp/* storage/logs/*
+- composer dumpautoload -o
+- echo ".git" >> notar.txt
+- echo ".gitattributes" >> notar.txt
+- echo "*.log" >> notar.txt
+- echo "notar.txt" >> notar.txt
+- echo ".travis.yml" >> notar.txt
+- tar -czf wula-${CI_COMMIT_TAG}.tar.gz -X notar.txt ./*
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: wula-${CI_COMMIT_TAG}.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: v2.0
+    repo: ninggf/wula
+    php:  '5.6'

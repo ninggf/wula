@@ -3,7 +3,7 @@
 define('GZIP_ENABLED', true);
 /* 运行模式 */
 # define('APP_MODE', 'pro');
-/* 你可以配置系统的默认模块配置 */
+/* 配置系统的默认模块配置,请取消下一行的注释，将其值改为模块命名空间 */
 # define('DEFAULT_MODULE', 'app');
 /* 如果需要开启URL别名请取消下一行注释，并配置modules/alias.php */
 # define('ALIAS_ENABLED', true);

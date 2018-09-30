@@ -6,12 +6,13 @@
         "ext-json": "*",
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
+        "ext-mysqlnd": "*",
         "ext-mbstring": "*",
         "ext-libxml": "*",
         "ext-xml": "*",
         "ext-curl": "*",
         "ext-SPL": "*",
-        "ext-mysqlnd": "*",
+        "ext-zip": "*",
         "wula/wulaphp": "^2.5"
     },
     "require-dev": {

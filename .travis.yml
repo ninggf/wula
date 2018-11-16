@@ -43,7 +43,8 @@ script:
 
 before_deploy:
 - rm -rf modules/testm extensions/myext storage/report storage/tmp/* storage/logs/*
-- composer dumpautoload -o
+- composer update --no-dev
+- composer dumpautoload -a --no-dev --apcu
 - echo ".git" >> notar.txt
 - echo ".gitattributes" >> notar.txt
 - echo "*.log" >> notar.txt

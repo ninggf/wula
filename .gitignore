@@ -19,5 +19,6 @@ test.php
 .env
 tmp/
 logs/
+extensions/
 storage/mysql/
 docker-compose.yml
